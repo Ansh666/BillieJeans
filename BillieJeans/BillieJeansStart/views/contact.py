@@ -1,0 +1,2 @@
+def contact():
+    return None

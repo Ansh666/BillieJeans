@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="container">
+    <div class="p-4 m-4">
+    <div class="col-lg-5 mx-auto border rounded pt-4">
+    <h3 class="alert alert-light border rounded">Create An Account</h3>
+        
+        <form action="/Signup" method="POST">
+      
+
+           {% csrf_token %}
+           {% if error %}
+               <div class="alert alert-danger" role="alert">
+                 {{error}}
+               </div>
+            {% endif %}
+
+
+        <!-- firstname -->
+        <div class="form-group">
+         <lable for="">First Name</lable>
+         <input type="text" 
+         name="firstname" 
+         id="" value="{{values.first_name}}"
+         class="form-control form-control-sm"
+         placeholder="">
+         </div>
+
+         <!-- LastName -->
+        <div class="form-group">
+         <lable for="">Last Name</lable>
+         <input type="text" 
+         name="lastname" 
+         id="" value="{{values.last_name}}" 
+         class="form-control form-control-sm">
+         </div>
+
+         <!-- Phonenumber -->
+        <div class="form-group">
+         <lable for="">Phone Number</lable>
+         <input type="text" 
+         name="phone" 
+         id="" value="{{values.phone}}"
+         class="form-control form-control-sm"
+         placeholder="5555">
+         </div>
+
+
+        <!-- email -->
+        <div class="form-group">
+         <lable for="">Email</lable>
+         <input required type="email" 
+         name="email" 
+         id="" value="{{values.email}}"
+         class="form-control form-control-sm"
+         placeholder="example@gmail.com">
+
+        </div>
+
+         <!-- Password -->
+        <div class="form-group">
+         <lable for="">Password</lable>
+         <input type="password"
+         name="password"
+         id=""
+         class="form-control form-control-sm"
+         placeholder="*******">
+         </div>
+
+         <div class="form-group">
+          <input class="btn btn-sm btn-info" type="submit" value="Create An Account">
+          </div>
+
+    </div>
+</div>
+
+ 
+
+
+{% endblock %}

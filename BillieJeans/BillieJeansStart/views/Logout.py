@@ -1,0 +1,2 @@
+def Logout():
+    return None

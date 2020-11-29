@@ -1,0 +1,2 @@
+def Store():
+    return None
